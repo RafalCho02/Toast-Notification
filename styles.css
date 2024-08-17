@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Libre+Baskerville&family=Roboto:wght@200;400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, rebeccapurple, darkslateblue);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+  color: white;
+}
+
+.btn {
+  background: linear-gradient(135deg, white, lavender);
+  color: rebeccapurple;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: 2px solid rebeccapurple;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+#toasts {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.toast {
+  background: rgba(255, 255, 255, 0.9);
+  color: rebeccapurple;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  margin: 0.5rem;
+  border-left: 5px solid rebeccapurple;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease forwards, fadeOut 0.3s ease 2.7s forwards;
+  opacity: 0;
+}
+
+.toast.info {
+  border-left-color: dodgerblue;
+}
+
+.toast.success {
+  border-left-color: limegreen;
+}
+
+.toast.error {
+  border-left-color: crimson;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
